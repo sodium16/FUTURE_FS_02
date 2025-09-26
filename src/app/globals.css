@@ -3,11 +3,26 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* New Colors from Palette */
+  --rich-black: #11151C;
+  --prussian-blue: #212D40;
+  --charcoal: #364156;
+  --french-gray: #ACADBC;
+  --isabelline: #EFE9E7;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  /* Mapped to Tailwind variables */
+  --color-rich-black: var(--rich-black);
+  --color-prussian-blue: var(--prussian-blue);
+  --color-charcoal: var(--charcoal);
+  --color-french-gray: var(--french-gray);
+  --color-isabelline: var(--isabelline);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
