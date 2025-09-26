@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from 'react'; // 1. Import useEffect
+import { useEffect } from 'react'; 
 import { useAuth } from '../../context/AuthContext';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -9,24 +9,20 @@ export default function AccountPage() {
   const { user, loading } = useAuth();
   const router = useRouter();
 
-  // 2. Use useEffect to handle the redirect side effect
   useEffect(() => {
-    // We only want to redirect if loading is finished AND there's no user
     if (!loading && !user) {
       router.push('/login');
     }
-  }, [user, loading, router]); // Dependencies for the effect
+  }, [user, loading, router]); 
 
   if (loading) {
     return <div className="text-center p-10">Loading...</div>;
   }
 
-  // 3. If there's no user, render nothing while the redirect happens
   if (!user) {
     return null; 
   }
 
-  // This JSX will only render if loading is false and a user exists
   return (
     <div className="container mx-auto p-8">
       <h1 className="text-3xl font-bold mb-2">My Account</h1>

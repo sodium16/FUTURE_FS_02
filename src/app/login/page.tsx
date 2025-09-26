@@ -24,7 +24,7 @@ export default function LoginPage() {
     try {
       const auth = getClientAuth();
       await signInWithEmailAndPassword(auth, email, password);
-      router.push('/'); // Redirect to homepage on successful login
+      router.push('/'); 
     } catch (err) {
       // Type check the error
       if (err instanceof Error) {

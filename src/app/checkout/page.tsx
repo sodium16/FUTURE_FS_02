@@ -9,7 +9,7 @@ import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 export default function CheckoutPage() {
   const { cartItems, clearCart } = useCart();
-  const { user } = useAuth(); // Get the logged-in user
+  const { user } = useAuth(); 
   const router = useRouter();
   const [formData, setFormData] = useState({ name: '', email: '', address: '' });
   
@@ -23,7 +23,6 @@ export default function CheckoutPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Step 1: Check if the user is logged in
     if (!user) {
       alert('You must be logged in to place an order.');
       router.push('/login');
@@ -35,7 +34,6 @@ export default function CheckoutPage() {
       return;
     }
 
-    // Step 2: Create the order object with user ID
     const orderDetails = {
       userId: user.uid,
       shippingInfo: formData,
@@ -46,11 +44,9 @@ export default function CheckoutPage() {
     };
 
     try {
-      // Step 3: Save the order to the 'orders' collection in Firestore
       const docRef = await addDoc(collection(db, "orders"), orderDetails);
       console.log("Order saved with ID: ", docRef.id);
       
-      // Step 4: Clear the cart and redirect
       alert('Thank you for your order!');
       clearCart();
       router.push('/thank-you');

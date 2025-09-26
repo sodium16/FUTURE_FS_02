@@ -24,7 +24,7 @@ export default function SignUpPage() {
     try {
       const auth = getClientAuth();
       await createUserWithEmailAndPassword(auth, email, password);
-      router.push('/'); // Redirect to homepage on successful sign-up
+      router.push('/'); 
     } catch (err) {
       if (err instanceof Error) {
         if (err.message.includes('auth/email-already-in-use')) {

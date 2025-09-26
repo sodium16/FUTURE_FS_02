@@ -1,7 +1,7 @@
     "use client";
 
     import { useState, useMemo } from 'react';
-    import { Product } from '../types'; // Adjusted path for clarity
+    import { Product } from '../types'; 
     import Link from 'next/link';
 
     export default function ProductList({ products }: { products: Product[] }) {
@@ -37,7 +37,6 @@
             <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            // THE FIX: Changed the background to white
             className="w-full md:w-auto p-2 border rounded-md bg-white text-black"
             >
             {categories.map(category => (

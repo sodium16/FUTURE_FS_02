@@ -1,11 +1,10 @@
-// app/products/[id]/ProductDetailsClient.tsx
-"use client"; // This directive marks it as a Client Component
+"use client";
 
 import { useCart } from "@/context/CartContext";
 import { Product } from "@/app/types";
 
 export default function ProductDetailsClient({ product }: { product: Product }) {
-  const { addToCart } = useCart(); // Use our custom hook
+  const { addToCart } = useCart(); 
 
   return (
     <div className="flex flex-col">
@@ -16,11 +15,10 @@ export default function ProductDetailsClient({ product }: { product: Product }) 
       <p className="text-gray-700 mb-6">{product.description}</p>
       <div className="text-5xl font-extrabold mb-8">${product.price}</div>
       
-      {/* This button now calls the addToCart function from our context */}
       <button
         onClick={() => {
           addToCart(product);
-          alert(`${product.title} added to cart!`); // Optional: give user feedback
+          alert(`${product.title} added to cart!`);
         }}
         className="bg-black text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-800 transition-colors w-full md:w-auto"
       >

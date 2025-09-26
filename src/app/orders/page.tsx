@@ -6,7 +6,6 @@ import { db } from '../../../lib/firebase';
 import { collection, query, where, getDocs, orderBy, Timestamp } from 'firebase/firestore';
 import Link from 'next/link';
 
-// Define a type for our order structure for better type safety
 interface Order {
   id: string;
   total: number;

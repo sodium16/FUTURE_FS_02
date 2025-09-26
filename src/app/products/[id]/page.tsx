@@ -1,6 +1,5 @@
-// app/products/[id]/page.tsx
 import { Product } from '@/app/types';
-import ProductDetailsClient from './ProductDetailsClient'; // Import the new component
+import ProductDetailsClient from './ProductDetailsClient'; 
 
 async function getProduct(id: string): Promise<Product> {
   const res = await fetch(`https://fakestoreapi.com/products/${id}`);
@@ -23,7 +22,6 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
           />
         </div>
         
-        {/* The interactive details are now handled by the client component */}
         <ProductDetailsClient product={product} />
       </div>
     </main>

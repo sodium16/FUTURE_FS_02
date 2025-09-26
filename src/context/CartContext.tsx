@@ -12,8 +12,8 @@ interface CartContextType {
   addToCart: (product: Product) => void;
   removeFromCart: (productId: number) => void;
   updateQuantity: (productId: number, quantity: number) => void;
-  clearCart: () => void; // Added for checkout
-  cartTotal: number; // Added for convenience
+  clearCart: () => void; 
+  cartTotal: number; 
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -50,12 +50,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  // New function to clear the cart
   const clearCart = () => {
     setCartItems([]);
   };
 
-  // Calculate total price of items in the cart
   const cartTotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (

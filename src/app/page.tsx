@@ -10,7 +10,7 @@ async function getProducts(): Promise<Product[]> {
     return res.json();
   } catch (error) {
     console.error("Error fetching products:", error);
-    return []; // Return an empty array on error
+    return []; 
   }
 }
 

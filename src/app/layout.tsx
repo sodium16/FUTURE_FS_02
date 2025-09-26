@@ -24,7 +24,6 @@ export default function RootLayout({
         <AuthProvider>
           <CartProvider>
             <Header />
-            {/* The CSS in globals.css will now correctly handle this main element */}
             <main>
               {children}
             </main>

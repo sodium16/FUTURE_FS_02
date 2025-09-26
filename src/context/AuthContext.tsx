@@ -2,7 +2,6 @@
 
 import { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import { onAuthStateChanged, User } from 'firebase/auth';
-// Import the new function
 import { getClientAuth } from '../../lib/firebase';
 
 interface AuthContextType {
@@ -17,7 +16,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Get the client-side auth instance inside useEffect
     const auth = getClientAuth();
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);

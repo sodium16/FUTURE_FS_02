@@ -1,4 +1,3 @@
-// app/cart/page.tsx
 "use client";
 
 import { useCart } from "@/context/CartContext";
@@ -6,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function CartPage() {
-  // These functions don't exist yet, we'll add them in the next step!
   const { cartItems, removeFromCart, updateQuantity } = useCart();
 
   const cartTotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -27,7 +25,6 @@ export default function CartPage() {
       <h1 className="text-3xl font-bold mb-8">Your Shopping Cart</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        {/* Cart Items List */}
         <div className="lg:col-span-2">
           <div className="space-y-4">
             {cartItems.map(item => (

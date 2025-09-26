@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCart } from "../../context/CartContext";
 import { useAuth } from "../../context/AuthContext";
-import { getClientAuth } from "../../../lib/firebase"; // Corrected relative path
+import { getClientAuth } from "../../../lib/firebase"; 
 import { signOut } from "firebase/auth";
 
 export default function Header() {
@@ -21,7 +21,6 @@ export default function Header() {
   };
 
   return (
-    // THE FIX: Removed sticky, top-0, and z-10 classes from here
     <header className="bg-[var(--surface)] shadow-md">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-[var(--text)] hover:text-[var(--muted)]">
