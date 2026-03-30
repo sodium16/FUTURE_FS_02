@@ -1,6 +1,8 @@
 import { Product } from '@/app/types';
 import ProductList from '@/app/components/ProductList';
 
+export const dynamic = 'force-dynamic';
+
 async function getProducts(): Promise<Product[]> {
   try {
     const res = await fetch('https://fakestoreapi.com/products');
